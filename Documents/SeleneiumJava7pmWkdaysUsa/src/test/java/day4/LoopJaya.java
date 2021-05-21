@@ -5,7 +5,7 @@ public class LoopJaya {
         String name = "jayashree";
 
         System.out.println(name);
-        //
+
 
 
     }
