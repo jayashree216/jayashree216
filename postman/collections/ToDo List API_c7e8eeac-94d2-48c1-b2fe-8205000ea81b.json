@@ -1,0 +1,515 @@
+{
+    "info": {
+        "_postman_id": "f4b622b9-57ea-46f0-8bc5-55880a5bd89f",
+        "name": "ToDo List API",
+        "description": "Manages ToDo list tasks",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "tasks",
+            "item": [
+                {
+                    "name": "{task Id}",
+                    "item": [
+                        {
+                            "name": "/tasks/:taskId",
+                            "id": "45957be5-018d-481c-a892-a8f584aab970",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/tasks/:taskId",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tasks",
+                                        ":taskId"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "id": "8b4ba8c5-d73a-4e62-9895-22ec248e8e66",
+                                            "key": "taskId",
+                                            "value": "1",
+                                            "description": "(Required) Id of the task"
+                                        }
+                                    ]
+                                },
+                                "description": "Gets the informaiton for the specified task"
+                            },
+                            "response": [
+                                {
+                                    "id": "4de79709-e02f-4c1d-8488-5e73e3737fbe",
+                                    "name": "Got back the specified task",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/tasks/:taskId",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "tasks",
+                                                ":taskId"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "taskId",
+                                                    "value": "1",
+                                                    "description": "(Required) Id of the task"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n  \"title\": \"mollit in qui consectetur\",\n  \"status\": \"New\",\n  \"dueDate\": \"1969-10-15T11:59:27.486Z\"\n}"
+                                },
+                                {
+                                    "id": "0fd0150f-bfe5-4c68-a4aa-67370bdfe21b",
+                                    "name": "sent wrongly formatted data",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/tasks/:taskId",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "tasks",
+                                                ":taskId"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "taskId",
+                                                    "value": "1",
+                                                    "description": "(Required) Id of the task"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Bad Request",
+                                    "code": 400,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "\"Bad data sent\""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "/tasks/:taskId",
+                            "id": "56af7d78-9fc7-46cf-bb94-e62135ffb0ee",
+                            "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                            },
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"title\": \"Learn API Testing\",\n  \"status\": \"New\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/tasks/:taskId",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tasks",
+                                        ":taskId"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "id": "c47666ba-f6d3-4dac-8ff6-ba5adf87f25f",
+                                            "key": "taskId",
+                                            "value": "1",
+                                            "description": "(Required) Id of the task"
+                                        }
+                                    ]
+                                },
+                                "description": "Changes the description for the specified task"
+                            },
+                            "response": [
+                                {
+                                    "id": "8c1a691a-440c-4244-8f11-e3b196b25dd5",
+                                    "name": "task updated correctly",
+                                    "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/tasks/:taskId",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "tasks",
+                                                ":taskId"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "taskId",
+                                                    "value": "1",
+                                                    "description": "(Required) Id of the task"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n  \"title\": \"mollit in qui consectetur\",\n  \"status\": \"New\",\n  \"dueDate\": \"1969-10-15T11:59:27.486Z\"\n}"
+                                },
+                                {
+                                    "id": "7e91bc5d-3eb4-41e1-80ec-8363d77a84b8",
+                                    "name": "send wrongly formatted data",
+                                    "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/tasks/:taskId",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "tasks",
+                                                ":taskId"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "taskId",
+                                                    "value": "1",
+                                                    "description": "(Required) Id of the task"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Bad Request",
+                                    "code": 400,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "\"Bad data sent\""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "/tasks/:taskId",
+                            "id": "5982391a-e013-4d68-b9b0-0bd51d8c0beb",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/tasks/:taskId",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tasks",
+                                        ":taskId"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "id": "fddc3080-f20e-4a31-ba96-67e359e565d4",
+                                            "key": "taskId",
+                                            "value": "1",
+                                            "description": "(Required) Id of the task"
+                                        }
+                                    ]
+                                },
+                                "description": "Removes the specified task"
+                            },
+                            "response": [
+                                {
+                                    "id": "035661ec-c9ab-4340-abe1-39c381101112",
+                                    "name": "specified task removed",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/tasks/:taskId",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "tasks",
+                                                ":taskId"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "taskId",
+                                                    "value": "1",
+                                                    "description": "(Required) Id of the task"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "No Content",
+                                    "code": 204,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{}"
+                                }
+                            ]
+                        }
+                    ],
+                    "id": "da18c2ee-2942-49b8-a0ea-2b55c109e53b"
+                },
+                {
+                    "name": "/tasks",
+                    "id": "bffcad09-8fc2-4da8-8bf6-f2682299f6be",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/tasks",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "tasks"
+                            ]
+                        },
+                        "description": "gets the list of all tasks for the current user"
+                    },
+                    "response": [
+                        {
+                            "id": "07031291-2527-4038-b630-09c0214e53d4",
+                            "name": "got back the list of tasks",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/tasks",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tasks"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n  \"value\": \"reference #/components/schemas/ not found in the OpenAPI spec\"\n}"
+                        },
+                        {
+                            "id": "08dbaceb-809c-4d81-af93-b6891b6f8f76",
+                            "name": "sent wrongly formatted data",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/tasks",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tasks"
+                                    ]
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "\"Bad data sent\""
+                        }
+                    ]
+                },
+                {
+                    "name": "/tasks",
+                    "id": "7656157a-9ea0-4bb1-a1e0-167db59e133f",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"title\": \"Learn API Testing\",\n  \"status\": \"New\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/tasks",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "tasks"
+                            ]
+                        },
+                        "description": "create a new task"
+                    },
+                    "response": [
+                        {
+                            "id": "c219581c-f2da-4743-89eb-bd6fa43bf2d8",
+                            "name": "created a new task",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/tasks",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tasks"
+                                    ]
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n  \"title\": \"mollit in qui consectetur\",\n  \"status\": \"New\",\n  \"dueDate\": \"1969-10-15T11:59:27.486Z\"\n}"
+                        },
+                        {
+                            "id": "b884e4f3-9d12-4f1f-ae42-93643d771801",
+                            "name": "sent wrongly formatted data",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/tasks",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tasks"
+                                    ]
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "\"Bad data sent\""
+                        }
+                    ]
+                }
+            ],
+            "id": "ddd48416-81a5-433b-af03-61a925e07049"
+        }
+    ],
+    "variable": [
+        {
+            "id": "618ccca5-2b42-4261-8aef-6532f6738c19",
+            "key": "baseUrl",
+            "value": "http://localhost:5000/todolist/api/v1",
+            "type": "string"
+        }
+    ]
+}
